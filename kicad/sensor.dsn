@@ -1,0 +1,230 @@
+(pcb /home/jo/work/backscatter/kicad/sensor.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "(2013-mar-13)-testing")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  139700 -76200  101600 -76200  101600 -101600  139700 -101600
+            139700 -76200)
+    )
+    (keepout "" (polygon signal 0  113208 -101498  113208 -101498))
+    (via "Via[0-1]_889:635_um" "Via[0-1]_889:0_um")
+    (rule
+      (width 254)
+      (clearance 254.1)
+      (clearance 254.1 (type default_smd))
+      (clearance 63.5 (type smd_smd))
+    )
+  )
+  (placement
+    (component SM0603
+      (place C1 116205 -87376 front 180 (PN "0.1 uF"))
+    )
+    (component 5X2_SHRD_HEADER
+      (place P1 111125 -88900 back 90 (PN CONN_5X2))
+    )
+    (component SM0805
+      (place R1 132207 -87376 front 0 (PN 90))
+      (place R2 132207 -84201 front 0 (PN 90))
+      (place R3 132207 -81280 front 0 (PN 150))
+    )
+    (component RGB_MULTILED
+      (place U1 123825 -83820 front 180 (PN RGB_MULTILED))
+    )
+    (component TCS3200
+      (place U2 123825 -92964 front 90 (PN TCS3200))
+    )
+    (component MOUNT_HOLE_4_40
+      (place MOUNT_HOLE_1 104140 -78740 front 0 (PN VAL**))
+      (place MOUNT_HOLE_2 137160 -78740 front 0 (PN VAL**))
+      (place MOUNT_HOLE_4 104140 -99060 front 0 (PN VAL**))
+      (place MOUNT_HOLE_3 137160 -99060 front 0 (PN VAL**))
+    )
+  )
+  (library
+    (image SM0603
+      (outline (path signal 127  -1143 635  1143 635))
+      (outline (path signal 127  1143 635  1143 -635))
+      (outline (path signal 127  1143 -635  -1143 -635))
+      (outline (path signal 127  -1143 -635  -1143 635))
+      (pin Rect[T]Pad_635x1143_um 1 -762 0)
+      (pin Rect[T]Pad_635x1143_um 2 762 0)
+    )
+    (image 5X2_SHRD_HEADER
+      (outline (path signal 381  -10160 4826  10160 4826))
+      (outline (path signal 381  10160 4826  10160 -4826))
+      (outline (path signal 381  10160 -4826  -10160 -4826))
+      (outline (path signal 381  -10160 -4826  -10160 4826))
+      (outline (path signal 381  -6901.18 -7299.96  -3898.9 -7299.96))
+      (outline (path signal 381  -5364.48 -5488.94  -6888.48 -7266.94))
+      (outline (path signal 381  -3840.48 -7264.4  -5364.48 -5486.4))
+      (pin Rect[A]Pad_1778x1778_um 1 -5080 -1270)
+      (pin Round[A]Pad_1778_um 2 -5080 1270)
+      (pin Round[A]Pad_1778_um 3 -2540 -1270)
+      (pin Round[A]Pad_1778_um 4 -2540 1270)
+      (pin Round[A]Pad_1778_um 5 0 -1270)
+      (pin Round[A]Pad_1778_um 6 0 1270)
+      (pin Round[A]Pad_1778_um 7 2540 -1270)
+      (pin Round[A]Pad_1778_um 8 2540 1270)
+      (pin Round[A]Pad_1778_um 9 5080 -1270)
+      (pin Round[A]Pad_1778_um 10 5080 1270)
+    )
+    (image SM0805
+      (outline (path signal 99.06  -1524 -762  -1530.22 -801.245  -1548.26 -836.649  -1576.35 -864.745
+            -1611.76 -882.784  -1651 -889  -1690.24 -882.784  -1725.65 -864.745
+            -1753.74 -836.649  -1771.78 -801.245  -1778 -762  -1771.78 -722.755
+            -1753.74 -687.351  -1725.65 -659.255  -1690.24 -641.216  -1651 -635
+            -1611.76 -641.216  -1576.35 -659.255  -1548.26 -687.351  -1530.22 -722.755))
+      (outline (path signal 99.06  -508 -762  -1524 -762))
+      (outline (path signal 99.06  -1524 -762  -1524 762))
+      (outline (path signal 99.06  -1524 762  -508 762))
+      (outline (path signal 99.06  508 762  1524 762))
+      (outline (path signal 99.06  1524 762  1524 -762))
+      (outline (path signal 99.06  1524 -762  508 -762))
+      (pin Rect[T]Pad_889x1397_um 1 -952.5 0)
+      (pin Rect[T]Pad_889x1397_um 2 952.5 0)
+    )
+    (image RGB_MULTILED
+      (outline (path signal 381  1501.14 -2499.36  -1501.14 -2499.36))
+      (outline (path signal 381  -1501.14 -2499.36  -1501.14 1998.98))
+      (outline (path signal 381  -1501.14 1998.98  -1000.76 2499.36))
+      (outline (path signal 381  -1000.76 2499.36  1501.14 2499.36))
+      (outline (path signal 381  1501.14 2499.36  1501.14 -2499.36))
+      (pin Rect[T]Pad_1300.48x701.04_um (rotate 180) A3 1475.74 -1099.82)
+      (pin Rect[T]Pad_1300.48x701.04_um (rotate 180) A2 1475.74 0)
+      (pin Rect[T]Pad_1300.48x701.04_um (rotate 180) A1 1475.74 1099.82)
+      (pin Rect[T]Pad_1300.48x701.04_um (rotate 180) C3 -1475.74 -1099.82)
+      (pin Rect[T]Pad_1300.48x701.04_um (rotate 180) C2 -1475.74 0)
+      (pin Rect[T]Pad_1300.48x701.04_um (rotate 180) C1 -1475.74 1099.82)
+    )
+    (image TCS3200
+      (outline (path signal 381  2999.74 -1998.98  -2499.36 -1998.98))
+      (outline (path signal 381  -2499.36 -1998.98  -2999.74 -1501.14))
+      (outline (path signal 381  -2999.74 -1501.14  -2999.74 1998.98))
+      (outline (path signal 381  -2999.74 1998.98  2999.74 1998.98))
+      (outline (path signal 381  2999.74 1998.98  2999.74 -1998.98))
+      (pin Rect[T]Pad_500.38x2250.44_um 8 -1905 2324.1)
+      (pin Rect[T]Pad_500.38x2250.44_um 7 -635 2324.1)
+      (pin Rect[T]Pad_500.38x2250.44_um 6 635 2324.1)
+      (pin Rect[T]Pad_500.38x2250.44_um 5 1905 2324.1)
+      (pin Rect[T]Pad_500.38x2250.44_um 1 -1905 -2326.64)
+      (pin Rect[T]Pad_500.38x2250.44_um 2 -635 -2326.64)
+      (pin Rect[T]Pad_500.38x2250.44_um 3 635 -2326.64)
+      (pin Rect[T]Pad_500.38x2250.44_um 4 1905 -2326.64)
+    )
+    (image MOUNT_HOLE_4_40
+      (pin Round[A]Pad_3302_um @1 0 0)
+    )
+    (padstack Round[A]Pad_1778_um
+      (shape (circle F.Cu 1778))
+      (shape (circle B.Cu 1778))
+      (attach off)
+    )
+    (padstack Round[A]Pad_3302_um
+      (shape (circle F.Cu 3302))
+      (shape (circle B.Cu 3302))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_500.38x2250.44_um
+      (shape (rect F.Cu -250.19 -1125.22 250.19 1125.22))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_635x1143_um
+      (shape (rect F.Cu -317.5 -571.5 317.5 571.5))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_889x1397_um
+      (shape (rect F.Cu -444.5 -698.5 444.5 698.5))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1300.48x701.04_um
+      (shape (rect F.Cu -650.24 -350.52 650.24 350.52))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1778x1778_um
+      (shape (rect F.Cu -889 -889 889 889))
+      (shape (rect B.Cu -889 -889 889 889))
+      (attach off)
+    )
+    (padstack "Via[0-1]_889:635_um"
+      (shape (circle F.Cu 889))
+      (shape (circle B.Cu 889))
+      (attach off)
+    )
+    (padstack "Via[0-1]_889:0_um"
+      (shape (circle F.Cu 889))
+      (shape (circle B.Cu 889))
+      (attach off)
+    )
+  )
+  (network
+    (net /5V
+      (pins C1-1 P1-1 U2-5)
+    )
+    (net /FREQ
+      (pins P1-8 U2-6)
+    )
+    (net /S0
+      (pins P1-5 U2-1)
+    )
+    (net /S1
+      (pins P1-7 U2-2)
+    )
+    (net /S2
+      (pins P1-9 U2-7)
+    )
+    (net /S3
+      (pins P1-10 U2-8)
+    )
+    (net /blue
+      (pins P1-6 U1-A1)
+    )
+    (net /green
+      (pins P1-4 U1-A2)
+    )
+    (net /red
+      (pins P1-2 U1-A3)
+    )
+    (net GND
+      (pins C1-2 P1-3 R1-2 R2-2 R3-2 U2-3 U2-4)
+    )
+    (net "N-000007"
+      (pins R2-1 U1-C2)
+    )
+    (net "N-000008"
+      (pins R3-1 U1-C3)
+    )
+    (net "N-000009"
+      (pins R1-1 U1-C1)
+    )
+    (class kicad_default "" /5V /FREQ /S0 /S1 /S2 /S3 /blue /green /red GND
+      "N-000007" "N-000008" "N-000009"
+      (circuit
+        (use_via Via[0-1]_889:635_um)
+      )
+      (rule
+        (width 254)
+        (clearance 254.1)
+      )
+    )
+  )
+  (wiring
+  )
+)

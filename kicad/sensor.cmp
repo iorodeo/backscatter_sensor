@@ -1,0 +1,52 @@
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Fri 09 Aug 2013 05:34:03 PM PDT
+
+BeginCmp
+TimeStamp = /52057DF9;
+Reference = C1;
+ValeurCmp = C;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /52057BCD;
+Reference = P1;
+ValeurCmp = CONN_5X2;
+IdModule  = 5X2_SHRD_HEADER;
+EndCmp
+
+BeginCmp
+TimeStamp = /520580EA;
+Reference = R1;
+ValeurCmp = 90;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /520580DB;
+Reference = R2;
+ValeurCmp = 90;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /520580CC;
+Reference = R3;
+ValeurCmp = 150;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52057C87;
+Reference = U1;
+ValeurCmp = RGB_MULTILED;
+IdModule  = RGB_MULTILED;
+EndCmp
+
+BeginCmp
+TimeStamp = /52057C66;
+Reference = U2;
+ValeurCmp = TCS3200;
+IdModule  = TCS3200;
+EndCmp
+
+EndListe

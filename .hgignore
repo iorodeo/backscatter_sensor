@@ -1,0 +1,9 @@
+syntax: glob
+*.pyc
+*~
+*.o
+*.swp
+build
+dist
+.komodo*
+deb_dist

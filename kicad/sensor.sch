@@ -1,0 +1,322 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:rgb_multiled
+LIBS:tcs3200
+EELAYER 24 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_5X2 P1
+U 1 1 52057BCD
+P 2300 3350
+F 0 "P1" H 2300 3650 60  0000 C CNN
+F 1 "CONN_5X2" V 2300 3350 50  0000 C CNN
+F 2 "" H 2300 3350 60  0000 C CNN
+F 3 "" H 2300 3350 60  0000 C CNN
+	1    2300 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L TCS3200 U2
+U 1 1 52057C66
+P 7600 4150
+F 0 "U2" H 8200 5400 60  0000 C CNN
+F 1 "TCS3200" H 8200 4650 60  0000 C CNN
+F 2 "" H 7600 4150 60  0000 C CNN
+F 3 "" H 7600 4150 60  0000 C CNN
+	1    7600 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L RGB_MULTILED U1
+U 1 1 52057C87
+P 5100 3250
+F 0 "U1" H 5050 3650 60  0000 C CNN
+F 1 "RGB_MULTILED" H 5100 2850 60  0000 C CNN
+F 2 "" H 5100 3250 60  0000 C CNN
+F 3 "" H 5100 3250 60  0000 C CNN
+	1    5100 3250
+	1    0    0    -1  
+$EndComp
+Text Label 3000 3150 2    60   ~ 0
+red
+Text Label 3000 3250 2    60   ~ 0
+green
+Text Label 1600 3150 0    60   ~ 0
+5V
+Text Label 1600 3250 0    60   ~ 0
+GND
+Text Label 1600 3350 0    60   ~ 0
+S0
+Text Label 1600 3450 0    60   ~ 0
+S1
+Text Label 1600 3550 0    60   ~ 0
+S2
+Text Label 3000 3350 2    60   ~ 0
+blue
+Text Label 3000 3450 2    60   ~ 0
+FREQ
+Text Label 3000 3550 2    60   ~ 0
+S3
+Text Label 9150 3050 2    60   ~ 0
+S3
+Text Label 9150 3200 2    60   ~ 0
+S2
+Text Label 9150 3350 2    60   ~ 0
+FREQ
+Text Label 9150 3500 2    60   ~ 0
+5V
+Text Label 7250 3050 0    60   ~ 0
+S0
+Text Label 7250 3200 0    60   ~ 0
+S1
+$Comp
+L C C1
+U 1 1 52057DF9
+P 8950 3850
+F 0 "C1" H 8950 3950 40  0000 L CNN
+F 1 "C" H 8956 3765 40  0000 L CNN
+F 2 "" H 8988 3700 30  0000 C CNN
+F 3 "" H 8950 3850 60  0000 C CNN
+	1    8950 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 52057F19
+P 7450 3800
+F 0 "#PWR01" H 7450 3800 30  0001 C CNN
+F 1 "GND" H 7450 3730 30  0001 C CNN
+F 2 "" H 7450 3800 60  0000 C CNN
+F 3 "" H 7450 3800 60  0000 C CNN
+	1    7450 3800
+	1    0    0    -1  
+$EndComp
+Text Label 7450 3800 0    60   ~ 0
+GND
+$Comp
+L GND #PWR02
+U 1 1 52057F2A
+P 8950 4300
+F 0 "#PWR02" H 8950 4300 30  0001 C CNN
+F 1 "GND" H 8950 4230 30  0001 C CNN
+F 2 "" H 8950 4300 60  0000 C CNN
+F 3 "" H 8950 4300 60  0000 C CNN
+	1    8950 4300
+	1    0    0    -1  
+$EndComp
+Text Label 8950 4300 0    60   ~ 0
+GND
+Text Label 6000 3050 2    60   ~ 0
+blue
+Text Label 6000 3250 2    60   ~ 0
+green
+Text Label 6000 3450 2    60   ~ 0
+red
+$Comp
+L R R3
+U 1 1 520580CC
+P 4400 4250
+F 0 "R3" V 4480 4250 40  0000 C CNN
+F 1 "150" V 4407 4251 40  0000 C CNN
+F 2 "" V 4330 4250 30  0000 C CNN
+F 3 "" H 4400 4250 30  0000 C CNN
+	1    4400 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 520580DB
+P 4150 4250
+F 0 "R2" V 4230 4250 40  0000 C CNN
+F 1 "90" V 4157 4251 40  0000 C CNN
+F 2 "" V 4080 4250 30  0000 C CNN
+F 3 "" H 4150 4250 30  0000 C CNN
+	1    4150 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 520580EA
+P 3900 4250
+F 0 "R1" V 3980 4250 40  0000 C CNN
+F 1 "90" V 3907 4251 40  0000 C CNN
+F 2 "" V 3830 4250 30  0000 C CNN
+F 3 "" H 3900 4250 30  0000 C CNN
+	1    3900 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 5205819E
+P 4400 4750
+F 0 "#PWR03" H 4400 4750 30  0001 C CNN
+F 1 "GND" H 4400 4680 30  0001 C CNN
+F 2 "" H 4400 4750 60  0000 C CNN
+F 3 "" H 4400 4750 60  0000 C CNN
+	1    4400 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR04
+U 1 1 520581AD
+P 4150 4750
+F 0 "#PWR04" H 4150 4750 30  0001 C CNN
+F 1 "GND" H 4150 4680 30  0001 C CNN
+F 2 "" H 4150 4750 60  0000 C CNN
+F 3 "" H 4150 4750 60  0000 C CNN
+	1    4150 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 520581BC
+P 3900 4750
+F 0 "#PWR05" H 3900 4750 30  0001 C CNN
+F 1 "GND" H 3900 4680 30  0001 C CNN
+F 2 "" H 3900 4750 60  0000 C CNN
+F 3 "" H 3900 4750 60  0000 C CNN
+	1    3900 4750
+	1    0    0    -1  
+$EndComp
+Text Label 4400 4750 0    60   ~ 0
+GND
+Text Label 4150 4750 0    60   ~ 0
+GND
+Text Label 3900 4750 0    60   ~ 0
+GND
+Wire Wire Line
+	2700 3150 3000 3150
+Wire Wire Line
+	2700 3250 3000 3250
+Wire Wire Line
+	2700 3350 3000 3350
+Wire Wire Line
+	2700 3450 3000 3450
+Wire Wire Line
+	2700 3550 3000 3550
+Wire Wire Line
+	1900 3150 1600 3150
+Wire Wire Line
+	1900 3250 1600 3250
+Wire Wire Line
+	1900 3350 1600 3350
+Wire Wire Line
+	1900 3450 1600 3450
+Wire Wire Line
+	1900 3550 1600 3550
+Wire Wire Line
+	7250 3050 7650 3050
+Wire Wire Line
+	7250 3200 7650 3200
+Wire Wire Line
+	8750 3050 9150 3050
+Wire Wire Line
+	8750 3200 9150 3200
+Wire Wire Line
+	8750 3350 9150 3350
+Wire Wire Line
+	8750 3500 9150 3500
+Wire Wire Line
+	8950 3650 8950 3500
+Connection ~ 8950 3500
+Wire Wire Line
+	7650 3350 7450 3350
+Wire Wire Line
+	7450 3350 7450 3800
+Wire Wire Line
+	8950 4050 8950 4300
+Wire Wire Line
+	5550 3050 6000 3050
+Wire Wire Line
+	5550 3250 6000 3250
+Wire Wire Line
+	5550 3450 6000 3450
+Wire Wire Line
+	4150 3250 4650 3250
+Wire Wire Line
+	4400 3450 4400 4000
+Wire Wire Line
+	4150 3250 4150 4000
+Wire Wire Line
+	3900 3050 3900 4000
+Wire Wire Line
+	3900 4500 3900 4750
+Wire Wire Line
+	4150 4500 4150 4750
+Wire Wire Line
+	4400 4500 4400 4750
+Wire Wire Line
+	3900 3050 4650 3050
+Wire Wire Line
+	4400 3450 4650 3450
+$Comp
+L PWR_FLAG #FLG06
+U 1 1 52058244
+P 2250 2500
+F 0 "#FLG06" H 2250 2595 30  0001 C CNN
+F 1 "PWR_FLAG" H 2250 2680 30  0000 C CNN
+F 2 "" H 2250 2500 60  0000 C CNN
+F 3 "" H 2250 2500 60  0000 C CNN
+	1    2250 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 52058253
+P 2250 2600
+F 0 "#PWR07" H 2250 2600 30  0001 C CNN
+F 1 "GND" H 2250 2530 30  0001 C CNN
+F 2 "" H 2250 2600 60  0000 C CNN
+F 3 "" H 2250 2600 60  0000 C CNN
+	1    2250 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 2500 2250 2600
+Text Label 2250 2600 0    60   ~ 0
+GND
+Wire Wire Line
+	7650 3500 7450 3500
+Connection ~ 7450 3500
+$EndSCHEMATC
