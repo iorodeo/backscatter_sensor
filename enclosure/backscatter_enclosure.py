@@ -9,6 +9,8 @@ class BackScatterEnclosure(object):
         self.param = param
         self.makeLayer0()
         self.makeLayer1()
+        self.makeMask()
+        self.makeTop()
         self.makeJigPlate()
         self.makeJigMount()
 
@@ -55,6 +57,53 @@ class BackScatterEnclosure(object):
         cutCubeSize = (cutX,cutY,2*thickness)
         cutCube = Cube(cutCubeSize)
         self.layer1 = Difference([self.layer1,cutCube])
+
+    def makeMask(self):
+        diskDiam = self.param['disk diameter']
+        diskThickness = self.param['mask thickness']
+        screwX, screwY = self.param['mask screw spacing']
+        screwDiam = self.param['mask screw diameter']
+        holeList = []
+        for i in (-1,1):
+            for j in (-1,1):
+                x = i*0.5*screwX
+                y = j*0.5*screwY
+                holeList.append((x,y,screwDiam))
+
+        holeAngle = self.param['join hole angle']
+        holeInset = self.param['join hole inset'] 
+        holePosRadius = 0.5*diskDiam - holeInset
+        holeDiam = self.param['4-40 clr']
+        holeAngleOffset = 0.5*holeAngle
+        for i in range(int(2.0*math.pi/holeAngle)):
+            x = holePosRadius*math.cos(holeAngle*i + holeAngleOffset)
+            y = holePosRadius*math.sin(holeAngle*i + holeAngleOffset)
+            holeList.append((x,y,holeDiam))
+
+        self.mask = disk_w_holes(diskThickness, diskDiam, holes=holeList)
+
+        for hole in self.param['mask rectangular holes'].values():
+            w, h = hole['size']
+            x, y = hole['pos']
+            cutCube = Cube(size=(w,h,2*diskThickness))
+            cutCube = Translate(cutCube,v=(x,y,0))
+            self.mask = Difference([self.mask, cutCube])
+
+    def makeTop(self):
+        holeList = []
+        diskDiam = self.param['disk diameter']
+        holeAngle = self.param['join hole angle']
+        holeInset = self.param['join hole inset'] 
+        holePosRadius = 0.5*diskDiam - holeInset
+        holeDiam = self.param['4-40 clr']
+        thickness = self.param['top thickness']
+        holeAngleOffset = 0.5*holeAngle
+        for i in range(int(2.0*math.pi/holeAngle)):
+            x = holePosRadius*math.cos(holeAngle*i + holeAngleOffset)
+            y = holePosRadius*math.sin(holeAngle*i + holeAngleOffset)
+            holeList.append((x,y,holeDiam))
+        self.top = disk_w_holes(thickness,diskDiam,holes=holeList)
+
 
     def makeJigPlate(self):
         plateX, plateY = self.param['jig plate size']
@@ -108,6 +157,7 @@ class BackScatterEnclosure(object):
         options = {
                 'showLayer0': True,
                 'showLayer1': True,
+                'showMask' : True,
                 'explode': (0,0,0),
                 }
         options.update(kwargs)
@@ -141,8 +191,6 @@ if __name__ == '__main__':
             '4-40 clr': 0.1160*INCH2MM,
             'layer0 thickness': 6.0, # bottom
             'layer1 thickness': 6.0,
-            'layer2 thickness': 3.0,
-            'layer3 thickness': 3.0, # top
             'join hole angle': 60.0*math.pi/180,
             'join hole inset': 4.5,
             'pcb hole spacing': (33.02,20.32),
@@ -150,6 +198,32 @@ if __name__ == '__main__':
             'jig plate size': (160,130),
             'jig plate thickness': 6.0,
             'jig mount thickness': 6.0,
+            'mask thickness' : 3.0,
+            'top thickness' : 3.0,
+            'mask rectangular holes' : { 
+                'idc' : { 
+                    'size' : (0.25*INCH2MM, 0.55*INCH2MM),
+                    'pos':  (-0.375*INCH2MM, 0.0*INCH2MM),
+                    },
+                'c1' : {
+                    'size' : (0.2*INCH2MM, 0.1*INCH2MM),
+                    'pos': (-0.175*INCH2MM, 0.06*INCH2MM),
+                    },
+                'led' : {
+                    'size' : (0.25*INCH2MM, 0.25*INCH2MM),
+                    'pos' : (0.125*INCH2MM, 0.2*INCH2MM), 
+                    },
+                'sensor' : { 
+                    'size' : (0.33*INCH2MM, 0.29*INCH2MM),
+                    'pos' : (0.125*INCH2MM, -0.16*INCH2MM),
+                    },
+                'r1-r3' : {
+                    'size' : (0.15*INCH2MM, 0.35*INCH2MM),
+                    'pos' : (0.455*INCH2MM, 0.185*INCH2MM),
+                    }, 
+                },
+            'mask screw diameter' : 0.22*INCH2MM,
+            'mask screw spacing' : (1.3*INCH2MM, 0.8*INCH2MM),
             }
 
     enclosure = BackScatterEnclosure(param)
@@ -191,6 +265,22 @@ if __name__ == '__main__':
     else:
         prog.add(enclosure.jigMount)
     prog.write('jig_mount.scad')
+
+    prog = SCAD_Prog()
+    prog.fn = 100
+    if project:
+        prog.add(Projection(enclosure.mask))
+    else:
+        prog.add(enclosure.mask)
+    prog.write('mask.scad')
+
+    prog = SCAD_Prog()
+    prog.fn = 100
+    if project:
+        prog.add(Projection(enclosure.top))
+    else:
+        prog.add(enclosure.top)
+    prog.write('top.scad')
     
             
 
